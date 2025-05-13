@@ -1,0 +1,12 @@
+# Node modules (React)
+frontend/node_modules/
+
+# Virtualenv (Python)
+backend/venv/
+__pycache__/
+
+# Autres fichiers à ignorer
+*.pyc
+.DS_Store
+.env
+

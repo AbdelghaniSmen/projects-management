@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liste des Utilisateurs</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    {% extends "base.html" %}
+
+    {% block title %}Home{% endblock %}
+
+    {% block content %}
+    <h1>Tableau des Utilisateurs</h1>
+
+    <!-- Afficher le message flash -->
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <div class="flash-message">
+                {% for message in messages %}
+                    <p>{{ message }}</p>
+                {% endfor %}
+            </div>
+        {% endif %}
+    {% endwith %}
+
+    
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Email</th>
+                <th>Entity</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in users %}
+            <tr>
+                <td>{{ user.Id }}</td>
+                <td>{{ user.Nom }}</td>
+                <td>{{ user.Email }}</td>
+                <td>{{ user.Entity }}</td>
+
+                <td>
+                    <form action="{{ url_for('delete_user', user_id=user.Id) }}" method="post" class="action-form" onsubmit="return confirm('Voulez-vous vraiment supprimer cet utilisateur ?')">
+                        <button class="delete-btn" type="submit" title="Supprimer">
+                            <i class="fas fa-trash"></i> <!-- Icône poubelle -->
+                        </button>
+                    </form>
+                    <form action="{{ url_for('update_user', user_id=user.Id) }}" method="get" class="action-form">
+                        <button class="update-btn" type="submit" title="Modifier">
+                            <i class="fas fa-edit"></i> <!-- Icône stylo -->
+                        </button>
+                    </form>
+                </td>
+                
+                
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    
+
+    <form action="{{ url_for('formulaire_utilisateur') }}" method="get">
+        <button class="c1" type="submit">Ajouter un utilisateur</button>
+    </form>
+    {% endblock %}
+
+
+</body>
+</html>

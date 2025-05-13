@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liste des Utilisateurs</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <title>Tableau des Entités</title>
+</head>
+<body>
+    {% extends "base.html" %}
+
+    {% block title %}Entities{% endblock %}
+
+    {% block content %}
+    <h1>Tableau des Entités</h1>
+
+    <!-- Affichage des messages flash -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                <div class="flash-message">{{ message }}</div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Identity</th>
+                <th>Nomentity</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for entity in entities %}
+            <tr>
+                <td>{{ entity.identity }}</td>
+                <td>{{ entity.nomentity }}</td>
+                <td>
+                    <form action="{{ url_for('delete_entity', identity=entity.identity) }}" method="post">
+                        <button class="delete-btn" type="submit">Supprimer</button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <form action="{{ url_for('formulaire_entity') }}" method="get">
+        <button class="c1" type="submit">Ajouter une nouvelle entité</button>
+    </form>
+    {% endblock %}
+
+</body>
+</html>

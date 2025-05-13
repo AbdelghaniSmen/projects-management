@@ -1,0 +1,190 @@
+
+/* Style du formulaire */
+form {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    width: 300px;
+}
+
+.form-container {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+}
+
+input[type=text], input[type=email], input[type=submit], input[type=reset], input[type=password] {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    box-sizing: border-box;
+}
+
+input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+}
+
+input[type=reset] {
+    background-color: #c71212;
+    color: white;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+/* Conteneur des boutons pour qu'ils soient alignés */
+.button-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+table {
+    width: 20%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 3px solid black;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Conteneur des actions (boutons) pour les aligner */
+.action-container {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Style des formulaires d'action pour éviter le retour à la ligne */
+.action-form {
+    margin: 10px;
+    padding: 5px;
+    display: inline-block;
+    white-space: nowrap; /* Empêche le retour à la ligne */
+}
+
+/* Style des boutons de suppression et de modification */
+.delete-btn, .update-btn {
+    border: none;
+    padding: 8px 12px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Bouton de suppression */
+.delete-btn {
+    background-color: #f44336;
+    color: white;
+}
+
+.delete-btn i {
+    margin-right: 5px;
+    color: white;
+}
+
+.delete-btn:hover {
+    background-color: #cc0000;
+}
+
+/* Bouton de modification */
+.update-btn {
+    background-color: #e2d815;
+    color: white;
+}
+
+.update-btn i {
+    margin-right: 5px;
+    color: white;
+}
+
+.update-btn:hover {
+    background-color: #f1d521;
+}
+
+th {
+    background-color: #2887f3;
+}
+
+h1 {
+    font-size: 24px;
+    color: #333;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 5px;
+}
+
+/* Style pour un bouton générique */
+.c1 {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.c1:hover {
+    background-color: #45a049;
+}
+
+.flash-message {
+    background-color: #dff0d8;
+    color: #3c763d;
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+/* Styles spécifiques pour la liste déroulante */
+.entity-select {
+    padding: 10px;
+    font-size: 16px;
+    width: 220px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+/* Barre de navigation */
+.navbar {
+    background-color: #343a40;
+}
+
+.navbar-brand, .nav-link {
+    color: #295ff3 !important;
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.nav-link:hover {
+    color: #c0c0c0 !important;
+}
+
+.container {
+    margin-top: 20px;
+}
+
+.alert {
+    margin-top: 20px;
+}
